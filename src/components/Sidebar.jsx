@@ -1,66 +1,68 @@
 import React, { useState } from "react";
-import { Layout, Menu } from "antd";
+import { Layout, Menu} from "antd";
 import { Link } from "react-router-dom";
 import {
-  HomeOutlined,
-  PlusSquareOutlined,
-  FormOutlined,
+  HomeFilled,
+  Html5Filled,
+  CodeFilled,
   SmileOutlined,
+  EditFilled,
+  TagFilled
 } from "@ant-design/icons";
-import ReactIcon from "./icons/ReactIcon";
+
 
 const menuItems = [
   {
     key: "Homepage",
-    icon: <HomeOutlined />,
+    icon: <HomeFilled />,
     label: "Rikkei Academy",
     link: "/",
   },
   {
     key: "Hooks",
-    icon: <PlusSquareOutlined />,
+    icon: <Html5Filled />,
     label: "Hooks",
     link: "/hooks",
     submenu: [
       {
         key: "useState",
-        icon: <ReactIcon />,
+        icon: <TagFilled />,
         label: "UseState",
         link: "/hooks/useState",
       },
       {
         key: "useEffect",
-        icon: <ReactIcon />,
+        icon: <TagFilled />,
         label: "UseEffect",
         link: "/hooks/useEffect",
       },
       {
         key: "useReducer",
-        icon: <ReactIcon />,
+        icon: <TagFilled />,
         label: "UseReducer",
         link: "/hooks/useReducer",
       },
       {
         key: "useMemo",
-        icon: <ReactIcon />,
+        icon: <TagFilled />,
         label: "UseMemo",
         link: "/hooks/useMemo",
       },
       {
         key: "useCallback",
-        icon: <ReactIcon />,
+        icon: <TagFilled />,
         label: "UseCallback",
         link: "/hooks/useCallback",
       },
       {
         key: "useContext",
-        icon: <ReactIcon />,
+        icon: <TagFilled />,
         label: "UseContext",
         link: "/hooks/useContext",
       },
       {
         key: "useRef",
-        icon: <ReactIcon />,
+        icon: <TagFilled />,
         label: "UseRef",
         link: "/hooks/useRef",
       },
@@ -68,7 +70,7 @@ const menuItems = [
   },
   {
     key: "Practice",
-    icon: <FormOutlined />,
+    icon: <CodeFilled />,
     label: "Practice",
     link: "/practice",
     submenu: [
@@ -85,6 +87,12 @@ const menuItems = [
         link: "/practice3/todoList",
       },
     ],
+  },
+  {
+    key: " Note",
+    icon: <EditFilled />,
+    label: "Note",
+    link: "/note",
   },
 ];
 const renderMenuItems = (items) =>
