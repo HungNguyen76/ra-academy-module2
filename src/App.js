@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import { Layout, theme } from "antd";
+import Breadcrumb from "./components/BreadCrumb";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
 
-function App() {
+import Router from "./route";
+
+const { Header, Content, Footer } = Layout;
+
+const App = () => {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout style={{ minHeight: "100vh" }}>
+      <Sidebar />
+      <Layout>
+        <Header style={{ padding: 0, background: colorBgContainer }}>
+          <Navbar />
+        </Header>
+        <Content style={{ margin: "0 16px" }}>
+          <Breadcrumb />
+          <div
+            style={{
+              padding: 24,
+              minHeight: 360,
+              background: colorBgContainer,
+            }}
+          >
+            <div className="site-layout-background" style={{ padding: 24 }}>
+              <Router />
+            </div>
+          </div>
+        </Content>
+        <Footer style={{ textAlign: "center" }}>
+          MinhHung ©2023 Rikkei Academy - Để nông dân biết code
+        </Footer>
+      </Layout>
+    </Layout>
   );
-}
+};
 
 export default App;
