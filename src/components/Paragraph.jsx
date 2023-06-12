@@ -1,12 +1,9 @@
-import { ThemeContext } from "../session3/hooks/context/ThemeProvider";
-import { useContext } from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../session3/hooks/UseContext";
 
-const Paragraph = () => {
-    const context = useContext(ThemeContext)
-    return (
-        <p className={context.theme}>
-            Context provides a way to pass data through the component tree without having to pass props down manually at every level.
-        </p>
-    )
+export default function Paragraph() {
+  const theme = useContext(ThemeContext)
+  console.log("🚀 ~ file: Paragraph.jsx:6 ~ Paragraph ~ theme:", theme)
+  
+  return <div className={theme}>Tai</div>;
 }
-export default Paragraph;

@@ -1,13 +1,10 @@
-import { memo } from 'react';
 import Paragraph from './Paragraph';
 
-function Content({onIncrease}) {
+function Content(props) {
     return (
         <>
-            {/* <Paragraph /> */}
-            <h2>HELLO 500 ANH EM RA</h2>
-            <button onClick={onIncrease}>Click me!</button>
+            <Paragraph propTheme={props.propTheme}/>
         </>
     )
 }
-export default memo(Content) //chỉ render khi nào props truyền vào Content thay đổi
+export default Content;
